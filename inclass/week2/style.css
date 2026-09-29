@@ -1,0 +1,20 @@
+header{
+    background-color: rgb(240, 194, 237);
+}
+
+main{
+    width: 960px;
+    margin: 0px auto;
+}
+
+p{
+    color: rebeccaPurple;
+    font-family: Arial, sans-serif;     
+}
+
+@media (min-width: 744px){
+    main{
+        columns: 2;
+        color: red;
+    }
+}
