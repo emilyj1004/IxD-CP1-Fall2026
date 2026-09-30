@@ -33,6 +33,11 @@
         console.log(imgTT);
     }
 
+    else {
+        imgTT.alt = "First Quokka Image";
+        imgTT.src = "images/quokka1.jpg";
+    }}
+
     colorBtn.addEventListener("click", changingColor);
     toggleBtn.addEventListener("click", changingColor);
     toggleBtn.addEventListener("click", togglingImage);
