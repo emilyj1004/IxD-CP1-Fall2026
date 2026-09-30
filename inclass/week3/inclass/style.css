@@ -16,11 +16,10 @@ img {
     width: 100%;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 370px) {
     body {
         flex-direction: row;
         flex-wrap: wrap;
-        background-color: lightpink;
     }
 
     button {
@@ -30,18 +29,10 @@ img {
     }
 }
 
-@media (min-width: 1024px) {
-    body {
-        background-color: darkslateblue;
-        color: white;
-    }
+@media (min-width: 1020px) {
 
     img {
-        width: 60%;
+        width: 50%;
     }
 
-    #textArea {
-        flex: 1;
-        padding: 20px;
-    }
 }
