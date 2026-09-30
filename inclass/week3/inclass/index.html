@@ -12,10 +12,22 @@
     <script>
         let thisPage = document.getElementById("docBody")
         let colorBtn = document.getElementById("colorChange")
+        let toggleBtn = document.getElementById("toggleBtn")
+
+        let changingColor = () => {
+            let redC = Math.random() * 255
+            let greenC = Math.random() * 255
+            let blueC = Math.random() * 255
+            thisPage.style.backgroundColor = "rgb(" + redC + "," + greenC + "," + blueC + ")";
+        }
 
         colorBtn.addEventListener("click",() => {
             thisPage.style.backgroundColor = "coral";
         });
+
+        colorBtn.addEventListener("click", changingColor);
+        toggleBtn.addEventListener("click", changingColor);
     </script>
+
 </body>
 </html>
