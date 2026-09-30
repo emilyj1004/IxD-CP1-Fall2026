@@ -2,6 +2,8 @@
     let colorBtn = document.getElementById("colorChange")
     let toggleBtn = document.getElementById("toggleBtn")
     let textBtn = document.getElementById("addText")
+    let imgTT = document.getElementById("imageToToggle");
+
 
     let changingColor = () => {
         let redC = Math.random() * 255
@@ -27,8 +29,7 @@
 
     let togglingImage = (event) => {
         console.log(event);
-        let imgTT = document.getElementById("imageToToggle");
-        
+
         if(imgTT.alt === "First Quokka Image") {
             imgTT.alt = "Second Quokka Image";
             imgTT.src = "images/quokka2.jpg";
@@ -40,6 +41,10 @@
         imgTT.src = "images/quokka1.jpg";
     }}
 
+    console.log(imgTT);
+
+
+    imgTT.addEventListener("click", togglingImage);
     colorBtn.addEventListener("click", changingColor);
     toggleBtn.addEventListener("click", changingColor);
     toggleBtn.addEventListener("click", togglingImage);
