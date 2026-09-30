@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro to JavaScript</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    
-    <script>
+    <title>Intro to JavaScript</title>
 
+</head>
+<body id="docBody">
+    <button id="colorChange">Change the color!</button>
+    <script>
+        let thisPage = document.getElementById("docBody")
+        let colorBtn = document.getElementById("colorChange")
+
+        colorBtn.addEventListener("click",() => {
+            thisPage.style.backgroundColor = "coral";
+        });
     </script>
 </body>
 </html>
