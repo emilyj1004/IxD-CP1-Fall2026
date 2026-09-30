@@ -25,8 +25,10 @@
         textRecepticle.appendChild(newElem);
     }
 
-    let togglingImage = () => {
+    let togglingImage = (event) => {
+        console.log(event);
         let imgTT = document.getElementById("imageToToggle");
+        
         if(imgTT.alt === "First Quokka Image") {
             imgTT.alt = "Second Quokka Image";
             imgTT.src = "images/quokka2.jpg";
