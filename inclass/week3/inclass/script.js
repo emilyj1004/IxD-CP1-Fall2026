@@ -28,7 +28,10 @@
     }
 
     let togglingImage = (event) => {
-        console.log(event);
+        console.log(event.target);
+        if(event.target === imgTT) {
+            console.log("Clicked Image")
+        }
 
         if(imgTT.alt === "First Quokka Image") {
             imgTT.alt = "Second Quokka Image";
