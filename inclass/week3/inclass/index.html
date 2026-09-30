@@ -9,25 +9,17 @@
 </head>
 <body id="docBody">
     <button id="colorChange">Change the color!</button>
-    <script>
-        let thisPage = document.getElementById("docBody")
-        let colorBtn = document.getElementById("colorChange")
-        let toggleBtn = document.getElementById("toggleBtn")
+    <button id="toggleBtn">Also change color</button>
+    <button id="addText">Add some text!</button>
 
-        let changingColor = () => {
-            let redC = Math.random() * 255
-            let greenC = Math.random() * 255
-            let blueC = Math.random() * 255
-            thisPage.style.backgroundColor = "rgb(" + redC + "," + greenC + "," + blueC + ")";
-        }
+    <img src="images/quokka1.jpg" alt="First Quokka Image" id="imageToToggle">
 
-        colorBtn.addEventListener("click",() => {
-            thisPage.style.backgroundColor = "coral";
-        });
+    <section id="textArea">
+      
+        
 
-        colorBtn.addEventListener("click", changingColor);
-        toggleBtn.addEventListener("click", changingColor);
-    </script>
+    </section>
+    <script src="script.js"></script>
 
 </body>
 </html>
