@@ -30,11 +30,11 @@ nav a {
 }
 
 .gallery {
-    width: 1600px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: #e2e0dc;
-    padding: 60px 30px;
-    min-height: 400px;
+    padding: 40px 30px;
 }
 
 .thumbnails {
