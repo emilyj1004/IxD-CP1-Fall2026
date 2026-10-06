@@ -12,24 +12,26 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eefccc;
+    background-color: #555a6d;
     padding: 15px 25px;
 }
 
 .logo {
     font-weight: bold;
+    size: 24px;
+    color: white;
 }
 
 nav a {
     margin-left: 25px;
-    color: black;
+    color: white;
     font-size: 16px;
 }
 
 .gallery {
     width: 600px;
     margin: 0 auto;
-    background-color: #efefef;
+    background-color: #cfccc7;
     padding: 60px 30px;
     min-height: 600px;
 }
