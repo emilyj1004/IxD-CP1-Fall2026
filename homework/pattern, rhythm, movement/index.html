@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pattern, Rhythm, and Movement</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+      canvas { display: block; }
+    </style>
+
+    <script src="libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Pattern, Rhythm, and Movement</h1>
+    <div id="sketch"></div>
+
+    <h2>Challenge</h2>
+    <p>For me, the most difficult part of this project was figuring out how to code the gradient. I knew I wanted the rectangles to fade from a light pink at the top of the screen to a deep red at the bottom, but I didn’t know how to make the color change gradually from one row to the next. My first thought was to set each row’s color by hand, but that wouldn’t work because the number of rows changes depending on the size of the window. I was stuck on how to make the color change automatically, so I searched on Google how to set a gradient in p5.js and asked AI to explain the logic behind it.</p>
+    <p>Through this, I learned that in HSB color mode I could keep the hue at 0 so everything stays red, and change only the saturation to make the color lighter or stronger. I also learned how to use the map() function, which takes the row number from the loop and converts it into a saturation value between 15 and 100. This meant the top row gets the palest red, the bottom row gets the strongest red, and every row in between falls into place on its own, no matter how big the screen is. Solving this problem helped me understand how loops and color values can work together, and that a gradient is really just a small, steady change repeated many times.</p>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
