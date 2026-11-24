@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Pixelify+Sans:wght@500&display=swap">
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         background: #15211e;
         color: #ece7d5;
-        font: 17px/1.65 "Karla", sans-serif;
+        font: clamp(16px, 1.1vw + 11px, 19px)/1.65 "Karla", sans-serif;
       }
       main {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 56px 24px 80px;
+        padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 48px) 80px;
       }
       h1, h2, h3 {
         font-family: "Pixelify Sans", sans-serif;
@@ -26,21 +27,31 @@
         line-height: 1.15;
         margin: 0;
       }
-      h1 { font-size: clamp(32px, 5vw, 50px); }
-      h2 { font-size: 32px; color: #c9c39a; margin-top: 64px; margin-bottom: 14px; }
-      h3 { font-size: 24px; margin-top: 44px; margin-bottom: 10px; }
+      h1 { font-size: clamp(30px, 5vw, 54px); overflow-wrap: break-word; }
+      h2 { font-size: clamp(26px, 3vw, 34px); color: #c9c39a; margin-top: clamp(40px, 6vw, 64px); margin-bottom: 14px; }
+      h3 { font-size: clamp(20px, 2.2vw, 26px); margin-top: clamp(32px, 4vw, 44px); margin-bottom: 10px; }
       h3 span { color: #faa86c; margin-right: 10px; }
-      .subtitle { color: #b3ae92; font-size: 18px; margin-top: 10px; }
-      p { max-width: 70ch; margin: 0 0 14px; }
+      .subtitle { color: #b3ae92; font-size: clamp(16px, 1.4vw, 19px); margin-top: 10px; }
+      p { width: 100%; margin: 0 0 14px; overflow-wrap: break-word; }
 
-      .uml-placeholder {
-        border: 2px dashed #3b5350;
+      .uml {
+        background: #ffffff;
         border-radius: 12px;
-        padding: 60px 20px;
-        text-align: center;
-        color: #b3ae92;
+        padding: 20px;
+        overflow-x: auto;
       }
-      img { max-width: 100%; height: auto; display: block; border-radius: 10px; }
+      .uml svg { display: block; width: 100%; max-width: 900px; min-width: 560px; height: auto; margin: 0 auto; }
+      .uml text { font-family: "Karla", sans-serif; fill: #111111; dominant-baseline: central; }
+      .uml .cls rect { fill: #ffffff; stroke: #111111; stroke-width: 1.2; }
+      .uml .cls rect.hd { stroke: none; }
+      .uml .cls line { stroke: #111111; stroke-width: 1.2; }
+      .uml .cn { font-size: 16px; font-weight: 700; }
+      .uml .at, .uml .me { font: 12.5px ui-monospace, Menlo, monospace; fill: #111111; }
+      .uml .rel { stroke: #111111; stroke-width: 1.3; fill: none; }
+      .uml .tri { fill: #ffffff; stroke: #111111; stroke-width: 1.3; }
+      .uml .dia { fill: #111111; }
+      .uml .rl { font-size: 13px; fill: #111111; }
+      img { width: 100%; max-width: 800px; height: auto; display: block; border-radius: 10px; }
 
       .flows {
         display: grid;
@@ -63,8 +74,8 @@
       #sketch-holder { margin-top: 20px; }
       #sketch-holder canvas {
         display: block;
-        width: 100% !important;
-        height: auto !important;
+        width: 100%;
+        height: auto;
         max-width: 800px;
         border-radius: 10px;
       }
@@ -109,8 +120,7 @@
 
       <h3><span>Step 1</span>Sketching the system</h3>
       <p>I created a sketch of what I imagined the ecosystem would need, mapping out physical conditions and behaviours. This was the stage where I began to understand aspects I hadn't originally considered, such as what would cause an animal's death or birth.</p>
-      <!-- Replace this div with your UML sketch, e.g. <img src="images/uml.jpg" alt="UML diagram"> -->
-      <div class="uml-placeholder">UML sketch goes here</div>
+      <div class="uml"><svg viewBox="0 0 740 757" role="img" aria-label="UML class diagram"><defs><marker id="umlah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6"/></marker></defs><g class="cls pond"><rect x="250" y="10" width="270" height="241" rx="6"/><rect class="hd" x="250" y="10" width="270" height="30" rx="6"/><rect class="hd" x="250" y="32" width="270" height="8"/><text class="cn" x="385.0" y="25.0" text-anchor="middle">Pond</text><line x1="250" y1="40" x2="520" y2="40"/><line x1="250" y1="120" x2="520" y2="120"/><text class="at" text-anchor="start" x="262" y="56.5">fish[ ], herons[ ], algae[ ]</text><text class="at" text-anchor="start" x="262" y="73.5">history[ ]</text><text class="at" text-anchor="start" x="262" y="90.5">cx, cy, rx, ry</text><text class="at" text-anchor="start" x="262" y="107.5">stones[ ], reeds[ ], bushes[ ]</text><text class="me" text-anchor="start" x="262" y="136.5">update()</text><text class="me" text-anchor="start" x="262" y="153.5">display()</text><text class="me" text-anchor="start" x="262" y="170.5">showStats()</text><text class="me" text-anchor="start" x="262" y="187.5">edgeAmount(x, y)</text><text class="me" text-anchor="start" x="262" y="204.5">randomSpot()</text><text class="me" text-anchor="start" x="262" y="221.5">wobble(angle)</text><text class="me" text-anchor="start" x="262" y="238.5">drawShape(size)</text></g><g class="cls animal"><rect x="40" y="311" width="260" height="173" rx="6"/><rect class="hd" x="40" y="311" width="260" height="30" rx="6"/><rect class="hd" x="40" y="333" width="260" height="8"/><text class="cn" x="170.0" y="326.0" text-anchor="middle">Animal</text><line x1="40" y1="341" x2="300" y2="341"/><line x1="40" y1="387" x2="300" y2="387"/><text class="at" text-anchor="start" x="52" y="357.5">x, y, vx, vy</text><text class="at" text-anchor="start" x="52" y="374.5">maxSpeed, size, energy</text><text class="me" text-anchor="start" x="52" y="403.5">move()</text><text class="me" text-anchor="start" x="52" y="420.5">steerToward(x, y, strength)</text><text class="me" text-anchor="start" x="52" y="437.5">steerAway(x, y, strength)</text><text class="me" text-anchor="start" x="52" y="454.5">findNearest(list)</text><text class="me" text-anchor="start" x="52" y="471.5">isDead()</text></g><g class="cls algae"><rect x="500" y="311" width="230" height="139" rx="6"/><rect class="hd" x="500" y="311" width="230" height="30" rx="6"/><rect class="hd" x="500" y="333" width="230" height="8"/><text class="cn" x="615.0" y="326.0" text-anchor="middle">Algae</text><line x1="500" y1="341" x2="730" y2="341"/><line x1="500" y1="404" x2="730" y2="404"/><text class="at" text-anchor="start" x="512" y="357.5">x, y</text><text class="at" text-anchor="start" x="512" y="374.5">size, maxSize</text><text class="at" text-anchor="start" x="512" y="391.5">blobs[ ]</text><text class="me" text-anchor="start" x="512" y="420.5">grow(sunlight)</text><text class="me" text-anchor="start" x="512" y="437.5">show()</text></g><g class="cls fish"><rect x="10" y="544" width="320" height="173" rx="6"/><rect class="hd" x="10" y="544" width="320" height="30" rx="6"/><rect class="hd" x="10" y="566" width="320" height="8"/><text class="cn" x="170.0" y="559.0" text-anchor="middle">Fish</text><line x1="10" y1="574" x2="330" y2="574"/><line x1="10" y1="603" x2="330" y2="603"/><text class="at" text-anchor="start" x="22" y="590.5">color</text><text class="me" text-anchor="start" x="22" y="619.5">update(fish, herons, algae, schooling)</text><text class="me" text-anchor="start" x="22" y="636.5">flee(heron)</text><text class="me" text-anchor="start" x="22" y="653.5">school(fish, schooling)</text><text class="me" text-anchor="start" x="22" y="670.5">lookForFood(algae)</text><text class="me" text-anchor="start" x="22" y="687.5">reproduce()</text><text class="me" text-anchor="start" x="22" y="704.5">show()</text></g><g class="cls heron"><rect x="370" y="544" width="200" height="156" rx="6"/><rect class="hd" x="370" y="544" width="200" height="30" rx="6"/><rect class="hd" x="370" y="566" width="200" height="8"/><text class="cn" x="470.0" y="559.0" text-anchor="middle">Heron</text><line x1="370" y1="574" x2="570" y2="574"/><line x1="370" y1="637" x2="570" y2="637"/><text class="at" text-anchor="start" x="382" y="590.5">restTime</text><text class="at" text-anchor="start" x="382" y="607.5">sightRange</text><text class="at" text-anchor="start" x="382" y="624.5">facing</text><text class="me" text-anchor="start" x="382" y="653.5">update(fish)</text><text class="me" text-anchor="start" x="382" y="670.5">reproduce()</text><text class="me" text-anchor="start" x="382" y="687.5">show()</text></g><path class="rel" d="M385 263 L385 281 L170 281 L170 309"/><path class="rel" d="M385 281 L615 281 L615 309"/><polygon class="dia" points="385,251 391,257 385,263 379,257"/><text class="rl" x="398" y="269" text-anchor="start">contains</text><path class="rel" d="M170 544 L170 516 L470 516 L470 544"/><path class="rel" d="M170 516 L170 496"/><polygon class="tri" points="170,484 177,496 163,496"/><text class="rl" x="180" y="508" text-anchor="start">extends</text><path class="rel" d="M370 584 L333 584" marker-end="url(#umlah)"/><text class="rl" x="351" y="575" text-anchor="middle">eats</text><path class="rel" d="M170 717 L170 743 L615 743 L615 453" marker-end="url(#umlah)"/><text class="rl" x="627" y="596.5" text-anchor="start">eats</text></svg></div>
 
       <h3><span>Step 2</span>Mapping the flow</h3>
       <p>Next, I mapped out the flowchart to understand each species' needs and reactions to conditions. For example, if the heron is hungry, it will chase the nearest fish. If it eats enough fish and its hunger is satisfied, it will reproduce. If it goes hungry, it will die off.</p>
